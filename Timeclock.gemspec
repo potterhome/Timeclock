@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Timeclock::VERSION
   spec.authors       = ["Andrew Lemmons"]
   spec.email         = ["andrew@lemmonhead.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Utility to track timeclock punching}
+  spec.summary       = %q{Utility to track timeclock punching}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -19,5 +19,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.3"
+  spec.add_development_dependency "activerecord", '~> 4.0.0'
+  spec.add_development_dependency "minitest"
   spec.add_development_dependency "rake"
+
+  spec.add_dependency "activerecord", '~> 4.0.0'
 end
