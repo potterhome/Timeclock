@@ -1,4 +1,4 @@
-require "activerecord/base"
+require "active_record"
 
 class Log < ActiveRecord::Base
 

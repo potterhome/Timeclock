@@ -1,34 +1,5 @@
 #!/usr/bin/env ruby
+require_relative "../lib/timeclock"
 
-require 'optparse'
-options = {}
-opt_parser = OptionParser.new do |opt|
 
-	opt.banner = "Usage: timeclock COMMAND [NAME]"
-  opt.separator  ""
-  opt.separator  "Commands"
-  opt.separator  "     clockin:    clock employee in"
-  opt.separator  "     clockout:   clock employee out"
-  opt.separator  "     log:        get a list of timeclocks"
-  opt.separator  ""
-  opt.separator  "Optionally you can specify individual names for different people."
-  opt.separator  ""
-  opt.separator  ""
-
-  opt.on("-h","--help","help") do
-    puts opt_parser
-  end
-end
-
-opt_parser.parse!
-
-case ARGV[0]
-when "start"
-  puts "call start on options #{options.inspect}"
-when "stop"
-  puts "call stop on options #{options.inspect}"
-when "restart"
-  puts "call restart on options #{options.inspect}"
-else
-  puts opt_parser
-end
+Timeclock::CLI.start

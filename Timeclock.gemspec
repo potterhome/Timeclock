@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'Timeclock/version'
+require 'timeclock/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "Timeclock"
@@ -23,7 +23,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "sqlite3"
   spec.add_development_dependency "minitest"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "thor"
 
   spec.add_dependency "activerecord", '~> 4.0.0'
   spec.add_dependency "sqlite3"
+  spec.add_dependency "thor"
 end
