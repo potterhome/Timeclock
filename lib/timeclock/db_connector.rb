@@ -3,7 +3,7 @@ class DBConnector < ActiveRecord::Base
 	DATABASE = "#{Dir.home}/timeclock_db.sqlite3"
 
 	def initialize
-		if DATABASE.exists?
+		if File.expand_path(DATABASE)
 			connect
 		else
 			connect
@@ -22,7 +22,7 @@ class DBConnector < ActiveRecord::Base
 
 	def connect
 		ActiveRecord::Base.establish_connection(
-			adapter: 'sqlite3'
+			adapter: 'sqlite3',
 			database: DATABASE
 			)
 	end

@@ -1,15 +1,16 @@
 require 'thor'
-require "timeclock"
+require_relative "db_connector"
 
 module Timeclock
 	class CLI < Thor
+
 
 		def self.start(*)
 			super
 		end
 
-		def initialize
-			DBConnector.new
+		def initialize(*)
+			::DBConnector.new
 		end
 
 		default_task :help
@@ -29,17 +30,6 @@ module Timeclock
 		end
 
 
-		desc "clockin", "clocks employee in"
-		long_desc <<-LD
-			Usage: timeclock clockin [NAME]\n
-				Commands\n
-				clockin:  \t  clock employee in\n
-				You can optionally specify a name for a specific person.
-		LD
-		def clockin(name = 'No Name')
-			employee = Employee.create_or_first(name: name)
-			employee.clock
-		end
 
 	end
 end
