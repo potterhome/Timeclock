@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'timeclock/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "Timeclock"
+  spec.name          = "timeclock"
   spec.version       = Timeclock::VERSION
   spec.authors       = ["Andrew Lemmons"]
   spec.email         = ["andrew@lemmonhead.com"]
@@ -22,10 +22,12 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "activerecord", '~> 4.0.0'
   spec.add_development_dependency "sqlite3"
   spec.add_development_dependency "minitest"
+  spec.add_development_dependency "formatador"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "thor"
 
   spec.add_dependency "activerecord", '~> 4.0.0'
+  spec.add_dependency "formatador"
   spec.add_dependency "sqlite3"
   spec.add_dependency "thor"
 end
